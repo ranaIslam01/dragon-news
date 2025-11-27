@@ -1,10 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { showError, showSuccess } from "../Provider/ToastProvider";
 import { AuthContext } from "../Provider/AuthContext";
+import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 
 export default function Register() {
-  const { createUser,updateUser,setUser} = useContext(AuthContext);
+  const { createUser, updateUser, setUser } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -14,28 +16,31 @@ export default function Register() {
     const password = form.password.value;
     const photo = form.photoURL.value;
     const email = form.email.value;
-    console.log(name, password, photo, email);
     //  create user
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         showSuccess("User create successfull");
-        updateUser({displayName: name, photoURL: photo })
-        .then(() => {
-          setUser({...user,displayName: name, photoURL: photo });
-        })
-        .catch((error) => {
-          showError(error.message);
-          setUser(user);
-        })
-        navigate('/')
-        console.log(result);
+        updateUser({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({ ...user, displayName: name, photoURL: photo });
+          })
+          .catch((error) => {
+            showError(error.message);
+            setUser(user);
+          });
+        navigate("/");
       })
       .catch((error) => {
-        console.log(error);
         showError(error.message);
       });
   };
+
+
+  const handleEyeIcon = () => {
+    setShowPassword(!showPassword);
+  }
+  
 
   return (
     <>
@@ -85,21 +90,21 @@ export default function Register() {
             </div>
 
             {/* Password */}
-            <div>
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Password
-              </label>
+            <div className="relative">
               <input
-                type="password"
-                id="password"
                 name="password"
+                className="px-6 py-3 w-full border-gray-300 border rounded-md"
                 required
-                placeholder="Create a strong password"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
+                type={showPassword ? "text" : "password"}
+                placeholder="Enter your password"
               />
+
+              <span
+                onClick={handleEyeIcon}
+                className="absolute top-3 right-4 text-2xl cursor-pointer "
+              >
+                {showPassword ? <IoIosEyeOff /> : <IoIosEye />}
+              </span>
             </div>
 
             {/* Photo URL */}

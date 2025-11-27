@@ -9,6 +9,9 @@ import NewsDetails from "../Pages/NewsDetails";
 import PrivetRoute from "../Provider/PrivetRoute";
 import Loder from "../Components/Loder";
 import ErrorPage from "../Pages/ErrorPage";
+import AboutPage from "../Pages/AboutPage";
+import Career from "../Components/Career";
+import CareerPage from "../Pages/CareerPage";
 
 export const Router = createBrowserRouter([
   {
@@ -50,6 +53,18 @@ export const Router = createBrowserRouter([
     ),
     loader: () => fetch("/news.json"),
     hydrateFallbackElement: <Loder></Loder>
+  },
+  {
+    path: "/about",
+    element: (
+        <AboutPage></AboutPage>
+    ),
+  },
+  {
+    path: "/career",
+    element: (
+        <CareerPage></CareerPage>
+    ),
   },
   {
     path: "/*",

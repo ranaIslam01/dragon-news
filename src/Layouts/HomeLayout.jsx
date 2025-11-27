@@ -6,6 +6,7 @@ import Navbar from '../Components/Navbar';
 import LeftAside from '../Components/HomeLayout/LeftAside';
 import RightAside from '../Components/HomeLayout/RightAside';
 import Loder from '../Components/Loder';
+import Footer from '../Components/Footer';
 
 const HomeLayout = () => {
 
@@ -44,6 +45,10 @@ const HomeLayout = () => {
             </aside>
 
          </main>
+
+         <div >
+            <Footer></Footer>
+         </div>
       </div>
    );
 };
