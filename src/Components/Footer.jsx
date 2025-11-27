@@ -29,6 +29,7 @@ const Footer = () => {
           <div className="flex gap-4 text-secondary-black">
             <a
               href="https://www.facebook.com/RanaFacebook01"
+              target="_blank"
               className="hover:text-primary-black transition text-xl"
             >
               <FaFacebook />

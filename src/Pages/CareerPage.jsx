@@ -19,7 +19,7 @@ const CareerPage = () => {
         <div className="col-span-7">
           <Career></Career>
         </div>
-        <div className="col-span-3 h-[101vh] overflow-y-auto pr-4">
+        <div className="col-span-3 h-[165vh] overflow-y-auto pr-4">
           <RightAside></RightAside>
         </div>
       </div>
