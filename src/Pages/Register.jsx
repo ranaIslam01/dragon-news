@@ -90,7 +90,14 @@ export default function Register() {
             </div>
 
             {/* Password */}
+
             <div className="relative">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Password
+              </label>
               <input
                 name="password"
                 className="px-6 py-3 w-full border-gray-300 border rounded-md"
@@ -101,7 +108,7 @@ export default function Register() {
 
               <span
                 onClick={handleEyeIcon}
-                className="absolute top-3 right-4 text-2xl cursor-pointer "
+                className="absolute top-10 right-4 text-2xl cursor-pointer "
               >
                 {showPassword ? <IoIosEyeOff /> : <IoIosEye />}
               </span>
