@@ -1,16 +1,61 @@
-# React + Vite
+# Dragon News
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dragon News is a responsive news web application built with **React**, **Tailwind CSS**, and **Firebase Authentication**, featuring dynamic news fetching, detailed article pages, and user authentication with Google, GitHub, and email/password login.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Technologies Used
 
-## React Compiler
+- **Frontend:** React.js, Tailwind CSS, HTML5, CSS3, JavaScript (ES6+)  
+- **Routing & State Management:** React Router, React Context API  
+- **Authentication & Backend:** Firebase Authentication (Email/Password, Google, GitHub)  
+- **UI Components & Notifications:** Reusable components, Toast notifications  
+- **Version Control:** Git & GitHub  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ⚡ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Responsive UI for **desktop and mobile** using Tailwind CSS.  
+- **User authentication** with email/password, Google, and GitHub.  
+- **Password reset** and profile update functionality.  
+- **Private Routes** for protected pages.  
+- Dynamic **news cards** displaying author info, ratings, view counts, and "Read More" links.  
+- Reusable components for maintainable and scalable frontend.  
+- **Toast notifications** for real-time feedback.  
+- Smooth routing and navigation using **React Router**.  
+
+---
+
+## 🚀 Getting Started
+
+1. **Clone the repository:**
+
+```bash
+git clone <your-repo-url>
+cd dragon-news
+npm install
+npm run dev
+
+src/
+├─ components/     # Reusable UI components
+├─ pages/          # Login, Register, News Details, Home
+├─ provider/       # AuthContext, ToastProvider
+├─ Router/         # React Router configuration
+├─ App.jsx
+├─ main.jsx
+└─ index.css
+
+
+💡 Future Improvements
+
+Add news category filters and search functionality.
+
+Integrate backend API for storing user preferences.
+
+Add pagination and lazy loading for performance.
+
+
+📄 License
+
+This project is licensed under the MIT License.
